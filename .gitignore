@@ -1,2 +1,6 @@
-.deps/
-build/
+build/*
+TAGS
+tags
+.deps/*
+/*.lib
+.vscode

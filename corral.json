@@ -1,0 +1,15 @@
+{
+    "packages": [
+      "varint"
+    ],
+    "deps": [],
+    "info": {
+      "description": "Variable length integer encoding library",
+      "homepage": "https://github.com/ergl/varint",
+      "license": "",
+      "documentation_url": "https://ergl.github.io/ponycheck/",
+      "version": "0.1.0",
+      "name": "varint"
+    }
+  }
+  

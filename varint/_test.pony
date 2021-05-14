@@ -1,5 +1,4 @@
 use "ponytest"
-use ".."
 use "random"
 use "time"
 
@@ -12,6 +11,7 @@ actor Main is TestList
     test(_Test300)
     test(_TestRandomInt)
     test(_TestOneByte)
+    // test(_TestZeroByte)
 
 class iso _Test300 is UnitTest
   fun name(): String => "Testing encode 300"
@@ -56,20 +56,19 @@ class iso _TestOneByte is UnitTest
       t.fail("Error")
       t.complete(true)
     end
-/*
-class iso _TestZeroByte is UnitTest
-  fun name(): String => "Testing encoding/decoding with leading Zeroes byte"
-  fun apply(t: TestHelper) =>
-    let now = Time.now()
-    var gen = Rand(now._1.u64(), now._2.u64())
-    try
-      let buf: Array[U8] = [0; gen.u8()]
-      let num: U64 = Varint.decode(buf, t)?
-      t.assert_true(num == 300)
-      let enc: Array[U8] = Varint.encode(300, t)?
-      t.assert_array_eq[U8](enc, buf)
-    else
-      t.fail("Error")
-      t.complete(true)
-    end
-*/
+
+// class iso _TestZeroByte is UnitTest
+//   fun name(): String => "Testing encoding/decoding with leading Zeroes byte"
+//   fun apply(t: TestHelper) =>
+//     let now = Time.now()
+//     var gen = Rand(now._1.u64(), now._2.u64())
+//     try
+//       let buf: Array[U8] = [0; gen.u8()]
+//       let num: U64 = Varint.decode(buf)?
+//       t.assert_true(num == 300)
+//       let enc: Array[U8] = Varint.encode(300)?
+//       t.assert_array_eq[U8](enc, buf)
+//     else
+//       t.fail("Error")
+//       t.complete(true)
+//     end
